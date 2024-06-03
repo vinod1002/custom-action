@@ -1,0 +1,16 @@
+name: Composite Action Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  hello_world_job:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run composite action
+        uses: ./my-composite-action
+        with:
+          name: "World"
