@@ -9,17 +9,17 @@ runs:
   using: 'composite'
   steps:
     - name: Set executable permissions for scripts
-      run: chmod +x ./scripts/hello.sh ./scripts/goodbye.sh
+      run: chmod +x ./my-composite-action/scripts/hello.sh ./my-composite-action/scripts/goodbye.sh
       shell: bash
       
     - name: Say Hello
-      run: ./scripts/hello.sh
+      run: ./my-composite-action/scripts/hello.sh
       shell: bash
       env:
         NAME: ${{ inputs.name }}
 
     - name: Say Goodbye
-      run: ./scripts/goodbye.sh
+      run: ./my-composite-action/scripts/goodbye.sh
       shell: bash
       env:
         NAME: ${{ inputs.name }}
